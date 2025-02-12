@@ -1,0 +1,39 @@
+body{
+    background-color: black;
+}
+
+h1
+    {font-family: "Just Me Again Down Here", serif;
+        font-weight: 800;
+            font-size: 50px;
+                color: white;
+                    text-align: center;
+}
+
+h2
+    {color: yellow;
+        font-family: "Just Me Again Down Here", serif;
+            font-size:30px;
+                text-align: center;
+}
+
+h3, li
+    {color: lightskyblue;
+        font-family: "Just Me Again Down Here", serif;
+            font-size: 25px;
+                text-align: center;
+                    margin-left: 5cm;
+                        margin-right: 5cm;
+}   
+
+p
+    {font-family: "Just Me Again Down Here", serif;
+        font-weight: 800;
+            font-size: 20px;
+                font-style: normal;
+                    color: white;
+                        line-height: 30px;
+                                padding-left: 5cm;
+                                    padding-right: 5cm;
+                                        cursor: help;
+}

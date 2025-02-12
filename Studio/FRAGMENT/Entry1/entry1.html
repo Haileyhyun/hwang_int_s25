@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photograph</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/entry1.css">
+
+    <style>
+        body {
+            background-image: url('assets/1.jpg');
+            background-color: black;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            position: relative;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="polaroid" onclick="toggleZoom(this)">
+        <img src="assets/2.jpg" alt="Polaroid 1">
+        <div class="overlay">
+            <img src="assets/3.jpg" alt="Overlay 1" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <img class="image-overlay" src="assets/3.jpg" alt="Image on top;">
+        <div class="text">Lovin' can hurt</div>
+        <audio class="audio" src="assets/1.mov"></audio>
+    </div>
+    <div class="polaroid" onclick="toggleZoom(this)">
+        <img src="assets/2.jpg" alt="Polaroid 2">
+        <div class="overlay">
+            <img src="assets/4.jpg" alt="Overlay 2" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <img class="image-overlay" src="assets/4.jpg" alt="Image on top;">
+        <div class="text">Lovin' can hurt sometimes</div>
+        <audio class="audio" src="assets/2.mov"></audio>
+    </div>
+    <div class="polaroid" onclick="toggleZoom(this)">
+        <img src="assets/2.jpg" alt="Polaroid 3">
+        <div class="overlay">
+            <img src="assets/5.jpg" alt="Overlay 3" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <img class="image-overlay" src="assets/5.jpg" alt="Image on top;">
+        <div class="text">But it's the only thing that I know</div>
+        <audio class="audio" src="assets/music1.mp3"></audio>
+    </div>
+    <div class="polaroid" onclick="toggleZoom(this)">
+        <img src="assets/2.jpg" alt="Polaroid 4">
+        <div class="overlay">
+            <img src="assets/6.jpg" alt="Overlay 4" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <img class="image-overlay" src="assets/6.jpg" alt="Image on top;">
+        <div class="text">And when it gets hard</div>
+        <audio class="audio" src="assets/music1.mp3"></audio>
+    </div>
+    <div class="polaroid" onclick="toggleZoom(this)">
+        <img src="assets/2.jpg" alt="Polaroid 5">
+        <div class="overlay">
+            <img src="assets/7.jpg" alt="Overlay 5" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <img class="image-overlay" src="assets/7.jpg" alt="Image on top;">
+        <div class="text">You know it can get hard sometimes</div>
+        <audio class="audio" src="assets/music1.mp3"></audio>
+    </div>
+
+    <script>
+        function toggleZoom(element) {
+            document.querySelectorAll('.polaroid').forEach(p => {
+                if (p !== element) p.classList.remove('zoomed');
+            });
+            element.classList.toggle('zoomed');
+
+            let audio = element.querySelector('.audio');
+            if (audio.paused) {
+                audio.play(); // Play the audio if it's paused
+            } else {
+                audio.pause(); // Pause the audio if it's already playing
+                audio.currentTime = 0;
+        }
+        }
+    </script>
+</body>
+</html>
